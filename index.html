@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sample</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Varela+Round');
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+        body {
+            background-color: #ededed;
+            color: gray;
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        .button {
+            -webkit-transition: box-shadow 0.15s;
+            -moz-transition: box-shadow 0.15s;
+            -ms-transition: box-shadow 0.15s;
+            -o-transition: box-shadow 0.15s;
+            transition: box-shadow 0.15s;
+            border: 1px solid #b2afa5;
+            border-color: #e1e0dc #c9c8c1 #b2afa5;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.439);
+            background: -webkit-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: -moz-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: -ms-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: -o-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: linear-gradient(top, #f6f5f0, #e1e0dc);
+            -pie-background: linear-gradient(top, #f6f5f0, #e1e0dc);
+            color: #6b635b;
+            -webkit-box-shadow: rgba(255, 255, 255, 0) 0 0 1px 0, rgba(255, 255, 255, 0) 0 0 0 1px inset, white 0 1px 0 0;
+            -moz-box-shadow: rgba(255, 255, 255, 0) 0 0 1px 0, rgba(255, 255, 255, 0) 0 0 0 1px inset, white 0 1px 0 0;
+            -ms-box-shadow: rgba(255, 255, 255, 0) 0 0 1px 0, rgba(255, 255, 255, 0) 0 0 0 1px inset, white 0 1px 0 0;
+            -o-box-shadow: rgba(255, 255, 255, 0) 0 0 1px 0, rgba(255, 255, 255, 0) 0 0 0 1px inset, white 0 1px 0 0;
+            box-shadow: rgba(255, 255, 255, 0) 0 0 1px 0, rgba(255, 255, 255, 0) 0 0 0 1px inset, white 0 1px 0 0;
+            display: inline-block;
+            white-space: nowrap;
+            margin: 0;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: normal;
+            text-align: center;
+            color: #6b635b;
+            padding: 30px 50px;
+            text-decoration: none;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+
+            .button.disabled {
+                color: #bdbbb9;
+                border: 1px solid #d3d3d3;
+                cursor: auto;
+                text-shadow: white 0 1px 0;
+                -webkit-box-shadow: white 0 1px 0 0 inset;
+                -moz-box-shadow: white 0 1px 0 0 inset;
+                -ms-box-shadow: white 0 1px 0 0 inset;
+                -o-box-shadow: white 0 1px 0 0 inset;
+                box-shadow: white 0 1px 0 0 inset;
+            }
+
+
+        .in-progress {
+            text-shadow: none;
+            background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), -webkit-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), -moz-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), -ms-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), -o-linear-gradient(top, #f6f5f0, #e1e0dc);
+            background: linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), linear-gradient(top, #f6f5f0, #e1e0dc);
+            -pie-background: linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), linear-gradient(top, #f6f5f0, #e1e0dc);
+            background-repeat: repeat;
+            -webkit-background-size: 40px 40px, 100% 100%;
+            -moz-background-size: 40px 40px, 100% 100%;
+            -ms-background-size: 40px 40px, 100% 100%;
+            -o-background-size: 40px 40px, 100% 100%;
+            background-size: 40px 40px, 100% 100%;
+            -webkit-animation: progress-bar-stripes 2s linear infinite;
+            -moz-animation: progress-bar-stripes 2s linear infinite;
+            -ms-animation: progress-bar-stripes 2s linear infinite;
+            -o-animation: progress-bar-stripes 2s linear infinite;
+            animation: progress-bar-stripes 2s linear infinite;
+        }
+
+        @-webkit-keyframes progress-bar-stripes {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 40px 0;
+            }
+        }
+
+        @-moz-keyframes progress-bar-stripes {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 40px 0;
+            }
+        }
+
+        @keyframes progress-bar-stripes {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 40px 0;
+            }
+        }
+        .resBox {
+            background-color: lightgray;
+            margin:10px;
+            padding:5px;
+            width:46%;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:center;font-family:'Varela Round';font-size:larger">
+        <h2>Please Select the Data file</h2>
+        <div class="button" id="BBrowse" onclick="$('#fileinput').trigger('click');">Browse...</div>
+        <input id="fileinput" style="display: none" type="file" onchange="SendFile(event);" />
+        <hr />
+        <div id="result" style="width:100%">
+            <div class="resBox" style="float:left;">
+                <div style="text-align:center">File 1</div>
+                <div id="File1" style="font-family:'Open Sans'"></div>
+                <div id="File1Download" class="button disabled" style="padding: 7px 36px;" onclick="download('File1',$('#File1')[0].file);">Download</div>
+
+            </div>
+            <div class="resBox" style="float:right">
+                <div style="text-align:center">File 2</div>
+                <div id="File2" style="font-family:'Open Sans'"></div>
+                <div id="File2Download" class="button disabled" style="padding: 7px 36px;" onclick="download('File2',$('#File2')[0].file);">Download</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script>
+        function download(filename, text) {
+            var pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            pom.setAttribute('download', filename);
+
+            if (document.createEvent) {
+                var event = document.createEvent('MouseEvents');
+                event.initEvent('click', true, true);
+                pom.dispatchEvent(event);
+            }
+            else {
+                pom.click();
+            }
+        }
+        function SendFile(e) {
+            $('#BBrowse').addClass('in-progress');
+            $('#BBrowse').html("Uploading...");
+            setTimeout(function () {//Fake delay
+                var file = e.target.files[0];
+                if (file == null)
+                    return;
+                var f = new FileReader();
+                f.onload = function (e) {
+                    $.ajax({
+                        type: "POST",
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        url: 'WebService.asmx/GetCSVFile',
+                        data: JSON.stringify({ base64: btoa(e.target.result) }),
+                        success: function (res) {
+                            $('#BBrowse').removeClass('in-progress');
+                            $('#BBrowse').html("Browse...");
+                            data = JSON.parse(res.d);
+                            $('#File1')[0].file = "";
+                            $('#File2')[0].file = "";
+                            $('#File1').html('');
+                            $('#File2').html('');
+                            for (var d in data[0].Value) {
+                                $('#File1').append('<div style="text-align:left;color:white">Name: ' + data[0].Value[d].Name + ', frq: ' + data[0].Value[d].Count + '</div>');
+                                $('#File1')[0].file += data[0].Value[d].Name + "," + data[0].Value[d].Count + "\r\n";
+                            }
+                            for (var d in data[1].Value) {
+                                $('#File2').append('<div style="text-align:left;color:white">Address: ' + data[1].Value[d].Address + '</div>');
+                                $('#File2')[0].file += data[1].Value[d].Address + "\r\n";
+
+                            }
+                            $('#File1Download').removeClass('disabled');
+                            $('#File2Download').removeClass('disabled');
+                        }
+                    });
+
+                }
+                f.readAsText(file);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
